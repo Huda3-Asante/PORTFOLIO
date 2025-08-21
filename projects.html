@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Huda Ohememwaa Asante</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">Huda Ohememwaa Asante</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="about.html">About</a></li>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
+                <li class="nav-item"><a href="projects.html">Projects</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section" style="padding-top: 12rem;">
+        <div class="container">
+            <h1 class="section-title">My Projects</h1>
+            <p class="text-center text-muted" style="max-width: 700px; margin: 0 auto 3rem;">
+                Here's a collection of my recent works. Each project represents a unique challenge 
+                and solution tailored to specific client needs.
+            </p>
+
+            <div class="flex-center mb-3">
+                <div class="flex" style="flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+                    <button class="btn btn-sm filter-btn active" data-filter="all">All</button>
+                    <button class="btn btn-sm filter-btn" data-filter="web">Web Development</button>
+                    <button class="btn btn-sm filter-btn" data-filter="design">UI Design</button>
+                    <button class="btn btn-sm filter-btn" data-filter="branding">Branding</button>
+                </div>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card" data-category="web">
+                    <img src="https://via.placeholder.com/600x400" alt="E-Commerce Project" class="project-image">
+                    <div class="project-content">
+                        <h3>Modern E-Commerce Platform</h3>
+                        <p>A complete online shopping solution with admin dashboard, payment integration, and inventory management.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Stripe</span>
+                        </div>
+                        <a href="project-details.html" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="app">
+                    <img src="https://via.placeholder.com/600x400" alt="Fitness App" class="project-image">
+                    <div class="project-content">
+                        <h3>Fitness Tracker App</h3>
+                        <p>Mobile application for tracking workouts, nutrition, and progress with personalized recommendations.</p>
+                        <div class="project-tags">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>Redux</span>
+                        </div>
+                        <a href="project-details.html" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="design">
+                    <img src="https://via.placeholder.com/600x400" alt="UI Design" class="project-image">
+                    <div class="project-content">
+                        <h3>Financial Dashboard UI</h3>
+                        <p>Clean and intuitive dashboard design for a financial management application.</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>UI Design</span>
+                            <span>Dashboard</span>
+                        </div>
+                        <a href="project-details.html" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="web">
+                    <img src="https://via.placeholder.com/600x400" alt="Portfolio Website" class="project-image">
+                    <div class="project-content">
+                        <h3>Artist Portfolio Website</h3>
+                        <p>Showcase website for a professional artist with gallery, biography, and contact features.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>GSAP</span>
+                        </div>
+                        <a href="project-details.html" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="branding">
+                    <img src="https://via.placeholder.com/600x400" alt="Brand Identity" class="project-image">
+                    <div class="project-content">
+                        <h3>Startup Brand Identity</h3>
+                        <p>Complete brand package including logo, color palette, typography, and marketing materials.</p>
+                        <div class="project-tags">
+                            <span>Illustrator</span>
+                            <span>Branding</span>
+                            <span>Identity</span>
+                        </div>
+                        <a href="project-details.html" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="app">
+                    <img src="https://via.placeholder.com/600x400" alt="Food Delivery App" class="project-image">
+                    <div class="project-content">
+                        <h3>Food Delivery Application</h3>
+                        <p>Restaurant discovery and food ordering app with real-time tracking and reviews.</p>
+                        <div class="project-tags">
+                            <span>Flutter</span>
+                            <span>Firebase</span>
+                            <span>Maps API</span>
+                        </div>
+                        <a href="project-details.html" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="pagination-item"><i class="fas fa-chevron-left"></i></a>
+                <a href="#" class="pagination-item active">1</a>
+                <a href="#" class="pagination-item">2</a>
+                <a href="#" class="pagination-item">3</a>
+                <a href="#" class="pagination-item"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="grid grid-2">
+                <div>
+                    <h2>Have a project in mind?</h2>
+                    <p>Let's discuss your ideas and create something amazing together.</p>
+                </div>
+                <div class="flex-center">
+                    <a href="contact.html" class="btn btn-lg btn-primary">Start a Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Huda Ohememwaa Asante</h3>
+                    <p>Creating digital experiences that makes a difference.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="service-details.html">Web Development</a></li>
+                        <li><a href="service-details.html">Software Development</a></li>
+                        <li><a href="service-details.html">UI Design</a></li>
+                        <li><a href="service-details.html">Consultation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/Huda3-Asante" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/hudaasante" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" title="Email">
+                            <i class="fab fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 | Huda Ohememwaa Asante | All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
