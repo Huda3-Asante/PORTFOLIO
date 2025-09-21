@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huda Ohememwaa Asante | Creative Developer</title>
-    <link rel="stylesheet" href="style.css">
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="nav-brand">
-                <a href="index.html">Huda Ohememwaa Asante</a>
-            </div>
-            <ul class="nav-menu">    
-                <li class="nav-item"><a href="about.html">About</a></li>
-                <li class="nav-item"><a href="index.html">Home</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
-                <li class="nav-item"><a href="projects.html">Projects</a></li>
-                <li class="nav-item"><a href="contact.html">Contact</a></li>
+            <div class="nav-brand">Home|Huda Ohememwaa Asante</div>
+            <div class="menu-toggle" id="moble-menu">
+                <i class ="fas fa-bars"></i>
+            </div>    
+            <ul class="nav-menu" id="nav-links">    
+               <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="coming_soon.html" class="nav-link">Coming Soon</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -28,20 +30,24 @@
                 <span class="bar"></span>
             </div>
         </nav>
-    </header>
+    </header>      
 
     <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Crafting <span class="highlight">Digital</span> Experiences</h1>
-            <p class="hero-description">I'm a creative developer passionate about building beautiful, functional, and user-centered digital solutions that make an impact.</p>
-            <div class="hero-buttons">
+          <div class="hero-content" data-aos="fade-right">
+            <h1 class="hero-title">
+              Crafting <span class="highlight">Digital</span> Experiences
+            </h1>
+             <h2 class="typing-text"></h2>
+             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
                 <a href="projects.html" class="btn btn-primary">View My Work</a>
                 <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="animated-blob"></div>
+        
+          <div class="hero-visual" data-aos="fade-left">
+           <img src="developer.svg" alt="Developer illustration" class="floating-img">
         </div>
+
     </section>
 
     <section class="section">
@@ -49,21 +55,22 @@
             <h2 class="section-title">Featured Work</h2>
             <div class="projects-grid">
                 <article class="project-card" data-category="web">
-                    <img src="https://via.placeholder.com/600x400" alt="Project 1" class="project-image">
+                    <img src="./booksearch.png" alt="Project 1" class="project-image">
                     <div class="project-content">
-                        <h3>Fashion Shop Website</h3>
-                        <p>A fully responsive online fashion shop built with modern technologies.</p>
+                        <h3>Book Search API</h3>
+                        <p>A RESTful API for searching and managing books, built with FastAPI and MongoDB.</p>
                         <div class="project-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
+                            <span>Python</span>
+                            <span>FastAPI</span>
                             <span>MongoDB</span>
+                            <span>Swagger UI</span>
                         </div>
-                        <a href="project-details.html" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://github.com/Huda3-Asante/Book_Search.git" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <article class="project-card" data-category="app">
-                    <img src="https://via.placeholder.com/600x400" alt="Project 2" class="project-image">
+                    <img src="./schoolportal.png" alt="Project 2" class="project-image">
                     <div class="project-content">
                         <h3>School Portal System</h3>
                         <p>An interactive online portal for educational activities</p>
@@ -72,21 +79,22 @@
                             <span>CSS</span>
                             <span>JAVASCRIPT</span>
                         </div>
-                        <a href="project-details.html" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                        <a href="./tema new church school/index.html" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <article class="project-card" data-category="design">
-                    <img src="https://via.placeholder.com/600x400" alt="Project 3" class="project-image">
+                    <img src="./advertisement.png" alt="Project 3" class="project-image">
                     <div class="project-content">
-                        <h3>Brand Identity Design</h3>
-                        <p>Complete brand identity package for a startup company.</p>
+                        <h3>An E-commerce API</h3>
+                        <p>A RESTful API for posting and managing adverts </p>
                         <div class="project-tags">
-                            <span>Canva</span>
-                            <span>Photoshop</span>
-                            <span>Branding</span>
+                           <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>MongoDB</span>
+                            <span>Swagger UI</span>
                         </div>
-                        <a href="project-details.html" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://github.com/INNOTELL/advertisement_management_api.git" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
@@ -106,7 +114,6 @@
                     </div>
                     <h3>Web Development</h3>
                     <p>Custom website development with modern frameworks and technologies.</p>
-                    <a href="service-details.html" class="btn btn-sm btn-primary mt-2">Learn More</a>
                 </div>
 
                 <div class="service-card">
@@ -115,7 +122,6 @@
                     </div>
                     <h3>Graphic Design</h3>
                     <p>Creative and professional designs for branding</p>
-                    <a href="service-details.html" class="btn btn-sm btn-primary mt-2">Learn More</a>
                 </div>
 
                 <div class="service-card">
@@ -124,7 +130,6 @@
                     </div>
                     <h3>UI Design</h3>
                     <p>User-interface designs solutions that enhance engagement and conversion.</p>
-                    <a href="service-details.html" class="btn btn-sm btn-primary mt-2">Learn More</a>
                 </div>
             </div>
         </div>
@@ -177,6 +182,14 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,   // animation duration in ms
+    once: true        // whether animation should happen only once
+  });
+</script>
+
 </body>
-</html>
+</html>   

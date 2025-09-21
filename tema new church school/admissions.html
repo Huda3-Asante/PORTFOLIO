@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>New Student Registration - Tema New Church School</title>
+  <meta content="Tema New Church School offers quality education from Pre-School to Junior High School with a focus on academic excellence, leadership, cultural values, and holistic student development in a nurturing environment." name="description" />
+  <meta content="Tema New Church School, Pre-School, Junior High School, Primary education, holistic education, leadership development, academic excellence, Cadet Troupe, extracurricular activities, Ghana, Tema" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="assets/img/school_logo.jpg" rel="icon">
+  <link href="assets/img/school_logo.jpg" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- SweetAlert2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+  <style>
+    .form-section {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+
+    .form-title {
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .form-control[readonly] {
+      background-color: #e9ecef;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/school_logo.jpg" alt="">
+        <h1 class="sitename">Tema New Church School</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home<br></a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="#" class="active">Admissions | Register here</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="./New Church School Portal/index.php">Login to School Portal</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <h1>New Student Registration</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">New Student Registration</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Registration Form Section -->
+    <section id="registration-form" class="registration-form section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <u><h3>Admission Form</h3></u>
+            <p>Please fill out the form below to register for admission to Tema New Church School.</p>
+            <form id="registrationForm">
+              <!-- Personal Information -->
+              <div class="form-section">
+                <h2 class="form-title">Personal Information</h2>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="Surname" class="form-label">Surname</label>
+                    <input type="text" class="form-control" id="Surname" name="Surname" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="Othernames" class="form-label">Othernames</label>
+                    <input type="text" class="form-control" id="Othernames" name="Othernames" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="Age" class="form-label">Age (years)</label>
+                    <input type="number" class="form-control" id="Age" name="Age" readonly>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender" name="gender" required>
+                      <option value="" disabled selected>Select Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="religion" class="form-label">Religion</label>
+                    <input type="text" class="form-control" id="religion" name="religion" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="healthStatus" class="form-label">Health Status</label>
+                    <input type="text" class="form-control" id="healthStatus" name="healthStatus" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="passportPicture" class="form-label">Passport Picture</label>
+                    <input type="file" class="form-control" id="passportPicture" name="passportPicture" accept="image/*" required>
+                    <img id="passportPreview" src="#" alt="Preview" style="display: none; max-width: 150px; margin-top: 10px;">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Academic Information -->
+              <div class="form-section">
+                <h2 class="form-title">Academic Information</h2>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="formerSchool" class="form-label">Former School</label>
+                    <input type="text" class="form-control" id="formerSchool" name="formerSchool">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="previousClass" class="form-label">Previous Class</label>
+                    <select class="form-control" id="previousClass" name="previousClass">
+                      <option value="" disabled selected>Select Class</option>
+                      <option value="1">Creche</option>
+                      <option value="2">KG 1</option>
+                      <option value="3">KG 2</option>
+                      <option value="4">Basic 1</option>
+                      <option value="5">Basic 2</option>
+                      <option value="6">Basic 3</option>
+                      <option value="7">Basic 4</option>
+                      <option value="8">Basic 5</option>
+                      <option value="9">Basic 6</option>
+                      <option value="10">JHS 1</option>
+                      <option value="11">JHS 2</option>    
+                      <option value="12">JHS 3</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="presentClass" class="form-label">Present Class</label>
+                    <select class="form-control" id="presentClass" name="presentClass" required>
+                      <option value="" disabled selected>Select Class</option>
+                      <option value="1">Creche</option>
+                      <option value="2">KG 1</option>
+                      <option value="3">KG 2</option>
+                      <option value="4">Basic 1</option>
+                      <option value="5">Basic 2</option>
+                      <option value="6">Basic 3</option>
+                      <option value="7">Basic 4</option>
+                      <option value="8">Basic 5</option>
+                      <option value="9">Basic 6</option>
+                      <option value="10">JHS 1</option>
+                      <option value="11">JHS 2</option>    
+                      <option value="12">JHS 3</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Guardian Information -->
+              <div class="form-section">
+                <h2 class="form-title">Parent/Guardian Information</h2>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="parentName" class="form-label">Parent/Guardian Name</label>
+                    <input type="text" class="form-control" id="parentName" name="parentName" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="address" class="form-label">Residential Address</label>
+                    <input type="text" class="form-control" id="address" name="address" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Phone Number(s)</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="work" class="form-label">Place of Work</label>
+                    <input type="text" class="form-control" id="work" name="work">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="parentReligion" class="form-label">Religion</label>
+                    <input type="text" class="form-control" id="parentReligion" name="parentReligion">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="education" class="form-label">Level of Education</label>
+                    <input type="text" class="form-control" id="education" name="education">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="returnDate" class="form-label">Form Return Date</label>
+                    <input type="date" class="form-control" id="returnDate" name="returnDate" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="signature" class="form-label">Signature of Parent/Guardian</label>
+                    <input type="text" class="form-control" id="signature" name="signature" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Office Use Only Section -->
+              <div class="form-section">
+                <h2 class="form-title">Office Use Only</h2>
+                <p><em>(To be filled by the Headteacher)</em></p>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="classAdmitted" class="form-label">Class Admitted to</label>
+                    <input type="text" class="form-control" id="classAdmitted" name="classAdmitted">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="admissionNumber" class="form-label">Admission Number</label>
+                    <input type="text" class="form-control" id="admissionNumber" name="admissionNumber">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="headteacherSignature" class="form-label">Signature</label>
+                    <input type="text" class="form-control" id="headteacherSignature" name="headteacherSignature">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="admissionDate" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="admissionDate" name="admissionDate">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-section text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="admissionForm.html" target="_blank" class="btn btn-secondary">Print Form</a>
+              </div>              
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Registration Form Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Tema New Church School</span>
+          </a>
+          <p>Provide information about Tema New Church School and its educational services.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/share/AWhg46gBM6KdMMCr/?mibextid=kFxxJD" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="#">Admission</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Community 5, Tema, Ghana</p>
+          <p>+233 234567890</p>
+          <p>newchurchschooltema@yahoo.com</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Tema New Church School</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom JS for Registration Form -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dobField = document.getElementById("dob");
+      const ageField = document.getElementById("Age");
+      const passportInput = document.getElementById("passportPicture");
+      const passportPreview = document.getElementById("passportPreview");
+
+      // Calculate Age
+      dobField.addEventListener("input", function () {
+        const dob = new Date(this.value);
+        const today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        const monthDiff = today.getMonth() - dob.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+          age--;
+        }
+        ageField.value = age;
+      });
+
+      // Preview Passport Picture
+      passportInput.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            passportPreview.src = e.target.result;
+            passportPreview.style.display = "block";
+          };
+          reader.readAsDataURL(file);
+        } else {
+          passportPreview.src = "#";
+          passportPreview.style.display = "none";
+        }
+      });
+
+      // Handle Form Submission
+      document.getElementById("registrationForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+        Swal.fire({
+          title: "Success!",
+          text: "Your registration has been successfully submitted.",
+          icon: "success",
+          confirmButtonText: "OK"
+        }).then(() => {
+          // Reload the page after SweetAlert is closed
+          window.location.reload();
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Admission Form - Tema New Church School</title>
+  <meta content="Tema New Church School offers quality education from Pre-School to Junior High School with a focus on academic excellence, leadership, cultural values, and holistic student development in a nurturing environment." name="description" />
+  <meta content="Tema New Church School, Pre-School, Junior High School, Primary education, holistic education, leadership development, academic excellence, Cadet Troupe, cultural diversity, extracurricular activities, Ghana, Tema" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="assets/img/school_logo.jpg" rel="icon">
+  <link href="assets/img/school_logo.jpg" rel="apple-touch-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #f4f4f4;
+            position: relative;
+        }
+        .container {
+            width: 700px;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #000033; 
+            line-height: 1.8; 
+        }
+        .serial {
+            text-align: right;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .header {
+            text-align: center; 
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #ff0000; 
+            font-size: 24px;
+            margin: 0;
+            font-weight: bold;
+        }
+        .header h2 {
+            color: #ff0000; 
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .info-left {
+            font-size: 14px;
+            max-width: 500px;
+        }
+        .info-left p {
+            margin: 5px 0;
+        }
+        .passport-box {
+            width: 150px; 
+            height: 180px; 
+            border: 1px solid #000033;
+        }
+        h3 {
+            text-align: center;
+            text-decoration: underline;
+        }
+        .content .field {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .footer {
+            margin-top: 20px;
+        }
+        .footer p {
+            font-size: 14px;
+        }
+        .signature-section {
+            margin-top: 20px; 
+        }
+        .signature-section p {
+            margin: 5px 0;
+        }
+        #print-btn {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #000033;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #print-btn:hover {
+            background-color: #000033;
+        }
+
+        @media print {
+            #print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="print-btn" onclick="window.print();">Print Admission Form</button>
+    
+    <div class="container">
+        <div class="serial" id="serial-number">
+            Serial No: 
+        </div>
+        <div class="header">
+            <h1>NEW CHURCH SCHOOL</h1>
+            <h2>(Education To A Higher End)</h2>
+        </div>
+        <div class="info-section">
+            <div class="info-left">
+                <p>DTD SERVICE, CO 150, CHURCH VILLAGE</p>
+                <p>COMM. 5, TEMA.</p>
+                <p>TEL. (0303)200583</p>
+                <p>Website: <a href="http://www.newchurchschool.org" style="color: #000033;">www.newchurchschool.org</a></p>
+                <p>Email: <a href="mailto:newchurchschooltema@yahoo.com" style="color: #000033;">newchurchschooltema@yahoo.com</a></p>
+            </div>
+            <div class="passport-box"></div>
+        </div>
+        <h3>ADMISSION FORM</h3>
+        <div class="content">
+            <div class="field">
+                Surname ………………………………………….. Other names ………………………………………………
+            </div>
+            <div class="field">
+                Date of birth ……………………………………………… Age …………………………………...
+            </div>
+            <div class="field">
+                Hometown …………………………………………..……………………………………………………
+            </div>
+            <div class="field">
+                Religion ……………………………………………… Former School ……………………………………
+            </div>
+            <div class="field">
+                Previous Class ……………………………….. Present Class ………………………………………………
+            </div>
+            <div class="field">
+                Health Status of Child ……………………………………………………………………………………………
+            </div>
+            <div class="field">
+                Father/ Mother/ Guardian’s Name…………………………………………………………………………..
+            </div>
+            <div class="field">
+                Residential Address ………………………………………………………………………………………………
+            </div>
+            <div class="field">
+                Phone (Cell): i) ………………………… ii) ……………………………… iii) ……………………………… .
+            </div>
+            <div class="field">
+                Place of Work ………………………………………………….. Occupation …………………………………
+            </div>
+            <div class="field">
+                Religion ………………………………………………………………………………………………………………
+            </div>
+            <div class="field">
+                Level of Education ………………………………………………………………………………………………….<br>
+                Form Return Date ……………………………................................................................................................
+            </div>
+            <div class="field">
+              <p>Signature (Father/ Mother/ Guardian) ……………………………………………………………………..</p>
+            </div> 
+        </div>
+        <div class="footer">
+          <div class="signature-section">
+              <p><b>OFFICE USE ONLY</b></p>
+              <p>Admitted to……………………………….. Admission No: ………………………………………………</p>
+              <p>Signature………………………………… Date: ………………………………………………</p>
+              <p style="text-align: center;">(Headteacher)</p>
+          </div>
+      </div>
+    </div>
+    <script>
+        // Automatically generate Serial Number
+        const serialNumberElement = document.getElementById('serial-number');
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); 
+        const day = String(today.getDate()).padStart(2, '0');
+        const serial = `${year}/${month}/${day}/NCST${'0001'}`; // Static increment for now
+        serialNumberElement.textContent = `Serial No: ${serial}`;
+    </script>
+</body>
+</html>

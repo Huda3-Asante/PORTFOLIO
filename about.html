@@ -2,25 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About | Huda Ohememwaa Asante</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?  family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.html">Huda Ohememwaa Asante</a>
+                <a href="about.html">Huda Ohememwaa Asante</a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="about.html">About</a></li>
                 <li class="nav-item"><a href="services.html">Services</a></li>
                 <li class="nav-item"><a href="projects.html">Projects</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
                 <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item"><a href="coming_soon.html">Coming Soon</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -35,31 +37,75 @@
             <div class="grid grid-2" style="gap: 4rem; align-items: center;">
                 <div>
                     <h1>Hello,I'm <span class="highlight">Huda Ohememwaa Asante</span></h1>
-                    <p class="text-muted" style="font-size: 1.2rem;">I'm a Web Developer and Graphics Designer with a love for all things creativity</p>
+                    <p class="text-muted" style="font-size: 1.2rem;">I'm a Backend Developer and Graphics Designer with a love for all things creativity</p>
                     <p>I believe in the power of design and technology to solve problems and create meaningful experiences.</p>
                     <p>My approach combines technical expertise with creative thinking to deliver solutions that not only look great but also perform exceptionally well.</p>
                     <div class="flex mt-3">
                         <a href="projects.html" class="btn btn-primary">View My Work</a>
                         <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                        <a href="C:\Users\hudaohememwaa\Desktop\My_Resume.docx" class="btn btn-downloadable">&#8595;Download Resume</a>
                     </div>
                 </div>
-                <div>
-                    <img src="C:\Users\hudaohememwaa\Desktop\photo.jpg.jpeg" alt="profile_photo" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="photo-frame floating">
+                    <img src="C:\Users\hudaohememwaa\Desktop\WEBSITE\photo.jpeg" alt="profile_photo" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
                 </div>
-            </div>
         </div>
     </section>
-     <section class="software">
-        <h3>⭐Software Skills</h3>
-        <div class="icons">
-           <i class="devicon-figma-plain"></i>
-           <i class="devicon-canva-original"></i>
-           <i class="devicon-html5-plain colored"></i>
-           <i class="devicon-css3-plain colored"></i>
-           <i class="devicon-python-plain colored"></i>
-        </div>
-    </section>
+    <!-- ===== Software Skills Section ===== -->
+<section class="skills-section">
+  <h2 class="skills-title">Tech Stack</h2>
 
+  <ul class="skills-list">
+    <li>
+      <img src="./html.svg" alt="html">
+      <span>HTML</span>
+    </li>
+    <li>
+      <img src="./css.svg" alt="css">
+      <span>CSS</span>
+    </li>
+    <li>
+     <img src="./javascript-original.svg" alt="css">
+      <span>JavaScript</span>
+    </li>
+    <li>
+      <img src="./python.svg" alt="python" style="width: 80px; height: 80px ;">
+      <span>Python</span>
+    </li>
+    <li>
+     <img src="./fastapi-original.svg" alt="fasapi">
+      <span>FastAPI</span>
+    </li>
+    <li>
+      <img src="./mysql.svg" alt="mysql">
+      <span>MySQL</span>
+    </li>
+    <li>
+     <img src="./mongodb-original-wordmark.svg" alt="mongodb">
+      <span>MongoDB</span>
+    </li>
+    <li>
+      <img src="./git.svg" alt="git">
+      <span>Git</span>
+    </li>
+    <li>
+      <img src="./github-original-wordmark.svg" style="width: 80px; height: 80px;"></i>
+      <span>GitHub</span>
+    </li>
+    <li>
+      <img src="./figma-original.svg "alt="figma">
+      <span>Figma</span>
+    </li>
+    <li>
+     <img src="./canva-original.svg "alt="canva">
+      <span>Canva</span>
+    </li>
+    <li>
+       <img src="./photoshop-original.svg "alt="Photoshop">
+      <span>Photoshop</span>
+    </li>
+  </ul>
+</section>
     <section class="section bg-light">
         <div class="container">
             <h2 class="section-title">My Skills & Expertise</h2>
@@ -71,8 +117,7 @@
                         </div>
                         <h3>Frontend Development</h3>
                         <ul class="footer-links">
-                            <li>HTML5</li>
-                            <li>JavaScript</li>
+                            <li>HTML</li>
                             <li>CSS</li>
                         </ul>
                     </div>
@@ -85,9 +130,9 @@
                         </div>
                         <h3>Backend Development</h3>
                         <ul class="footer-links">
-                            <li>Node.js</li>
+                            <li>FastAPI</li>
                             <li>Python</li>
-                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
                         </ul>
                     </div>
                 </div>
@@ -179,7 +224,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html" class="nav-link active">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -214,6 +259,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/script.js"></script>
 </body>
-</html>
+</html>  

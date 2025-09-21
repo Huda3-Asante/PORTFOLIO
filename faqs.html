@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs | Huda Ohememwaa Asante</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-brand"><a href="index.html">Huda Ohememwaa Asante</a></div>
+      <ul class="nav-menu">    
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="services.html">Services</a></li>
+        <li class="nav-item"><a href="projects.html">Projects</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="coming_soon.html">Coming Soon</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== FAQ SECTION ===== -->
+  <section class="section" style="padding-top: 6rem;">
+    <div class="container">
+      <h1 class="section-title">Frequently Asked Questions</h1>
+      <p class="text-center text-muted" style="max-width: 700px; margin: 0 auto 3rem;">
+        Here are some of the most common questions I get from clients.  
+        Click a question to reveal the answer.
+      </p>
+
+      <div class="grid" style="gap: 1rem; max-width: 800px; margin: 0 auto;">
+        
+        <!-- FAQ items (existing + new) -->
+        <div class="faq-item">
+          <div class="faq-question">How long does a typical project take?</div>
+          <div class="faq-answer">
+            <p>The timeline varies depending on the project scope and complexity. A simple website might take 2-4 weeks, while a complex web application could take 3-6 months. I'll provide a detailed timeline during our initial consultation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What's your pricing structure?</div>
+          <div class="faq-answer">
+            <p>I offer both fixed-price projects and hourly rates, depending on the project requirements. Fixed prices are great for well-defined projects, while hourly rates work better for ongoing work or projects with evolving requirements.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Do you work with remote clients?</div>
+          <div class="faq-answer">
+            <p>Yes! I work with clients from all over the world. I'm experienced in remote collaboration and use various tools to ensure smooth communication and project management.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What technologies do you work with?</div>
+          <div class="faq-answer">
+            <p>I work with a wide range of technologies including React, Vue, Node.js and Python. I choose the best technology stack for each project based on its specific requirements.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Can you help update or redesign an existing website?</div>
+          <div class="faq-answer">
+            <p>Absolutely! Whether you need small tweaks, a fresh redesign, or a complete overhaul, I can work with your existing setup to bring it up to modern standards.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Do you offer ongoing support after a project is completed?</div>
+          <div class="faq-answer">
+            <p>Yes, I provide maintenance and support packages to ensure your website or application stays updated, secure, and running smoothly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Can we schedule a free consultation?</div>
+          <div class="faq-answer">
+            <p>Of course! I offer a free initial consultation where we can discuss your ideas, goals, and project requirements before moving forward.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What if I don’t know exactly what I need?</div>
+          <div class="faq-answer">
+            <p>No problem at all. I can help you clarify your goals and suggest the best approach and technologies for your project.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 | Huda Ohememwaa Asante | All rights reserved.</p>
+    </div>
+  </footer>
+
+   <script src="assets/script.js"></script>
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach(question => {
+    question.addEventListener("click", function () {
+      this.classList.toggle("active");
+      this.nextElementSibling.classList.toggle("active");
+    });
+  });
+});
+</script>
+
+</body>
+</html>
