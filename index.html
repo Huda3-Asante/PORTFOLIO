@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huda Ohememwaa Asante | Creative Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/ai.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -43,7 +44,7 @@
         </div>
         
           <div class="hero-visual" data-aos="fade-left">
-           <img src="developer.svg" alt="Developer illustration" class="floating-img">
+           <img src="assets/icons/developer.svg" alt="Developer illustration" class="floating-img">
         </div>
 
     </section>
@@ -52,8 +53,38 @@
         <div class="container">
             <h2 class="section-title">Featured Work</h2>
             <div class="projects-grid">
+
                 <article class="project-card" data-category="web">
-                    <img src="./booksearch.png" alt="Project 1" class="project-image">
+                    <img src="assets/images/MOS.png" alt="Project 1" class="project-image">
+                    <div class="project-content">
+                        <h3>UI Design for an EdTech Company</h3>
+                        <p>MOS EdTech — Connecting Students and Tutors Seamlessly Across Borders</p>
+                        <div class="project-tags">
+                            <span>  Figma</span>
+                        </div>
+                        <a href="https://www.figma.com/design/bElJIPgsqf0NqIdjsYGgai/EduBridge-Ghana?node-id=0-1&t=98gRsn6jxT7K9mEs-1" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+
+                <article class="project-card" data-category="web">
+                    <img src="assets/images/KleanKonnet.jpeg" alt="Project 1" class="project-image">
+                    <div class="project-content">
+                        <h3>KleanKonnet API</h3>
+                        <p>A RESTful API cleaning app that connects users to cleaners or cleaning organisations.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>MongoDB</span>
+                            <span>Swagger UI</span>
+                        </div>
+                        <a href="https://kleankonnect-api.onrender.com/docs" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+
+                <article class="project-card" data-category="web">
+                    <img src="assets/images/booksearch.png" alt="Project 1" class="project-image">
                     <div class="project-content">
                         <h3>Book Search API</h3>
                         <p>A RESTful API for searching and managing books, built with FastAPI and MongoDB.</p>
@@ -68,7 +99,7 @@
                 </article>
 
                 <article class="project-card" data-category="app">
-                    <img src="./schoolportal.png" alt="Project 2" class="project-image">
+                    <img src="assets/images/schoolportal.png" alt="Project 2" class="project-image">
                     <div class="project-content">
                         <h3>School Portal System</h3>
                         <p>An interactive online portal for educational activities</p>
@@ -78,21 +109,6 @@
                             <span>JAVASCRIPT</span>
                         </div>
                         <a href="./tema new church school/index.html" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="project-card" data-category="design">
-                    <img src="./advertisement.png" alt="Project 3" class="project-image">
-                    <div class="project-content">
-                        <h3>An E-commerce API</h3>
-                        <p>A RESTful API for posting and managing adverts </p>
-                        <div class="project-tags">
-                           <span>Python</span>
-                            <span>FastAPI</span>
-                            <span>MongoDB</span>
-                            <span>Swagger UI</span>
-                        </div>
-                        <a href="https://github.com/INNOTELL/advertisement_management_api.git" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
@@ -179,15 +195,42 @@
             </div>
         </div>
     </footer>
+<!-- AI Portfolio Assistant -->
+<div class="ai-chatbot">
+  <button class="ai-toggle" aria-label="Open AI assistant">🤖</button>
 
-    <script src="assets/script.js"></script>
+  <div class="ai-chatbox">
+    <div class="ai-header">
+  <span>Huda’s AI Assistant</span>
+  <div>
+    <button class="ai-voice" title="Talk to assistant">🎤</button>
+    <button class="ai-close">&times;</button>
+  </div>
+</div>
+
+    <div class="ai-messages" id="aiMessages">
+      <div class="ai-message bot">
+        Hi 👋 Welcome to Huda’s portfolio.  
+        I can help you explore projects, skills, or contact details.
+      </div>
+    </div>
+
+    <div class="ai-options">
+      <button data-action="projects">View Projects</button>
+      <button data-action="skills">Skills & Tech</button>
+      <button data-action="contact">Contact Huda</button>
+      <button data-action="about">About Huda</button>
+    </div>
+  </div>
+</div>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/ai.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 1000,   // animation duration in ms
-    once: true        // whether animation should happen only once
+    duration: 1000, 
+    once: true        
   });
 </script>
-
 </body>
 </html>   
