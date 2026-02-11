@@ -1,0 +1,7 @@
+# Treat SVG files as binary (no line ending conversion)
+*.svg binary
+
+# Optional: ensure other text files have consistent line endings
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf

@@ -61,17 +61,79 @@ document.addEventListener("DOMContentLoaded", () => {
     handleVoiceCommand(transcript);
   });
 
-  function handleVoiceCommand(text) {
-    if (text.includes("project")) respond("projects");
-    else if (text.includes("skill")) respond("skills");
-    else if (text.includes("contact")) respond("contact");
-    else if (text.includes("about")) respond("about");
-    else {
-      const msg = "Sorry, I didn't understand. Try saying projects, skills, or contact.";
-      addBotMessage(msg);
-      speak(msg);
-    }
+ function handleVoiceCommand(text) {
+
+  /* Wake word */
+  if (text.includes("hey huda")) {
+    addBotMessage("Hi! How can I help you?");
+    return;
   }
+
+  /* Internal navigation */
+  if (text.includes("project")) {
+    navigate("projects.html", "Opening projects page.");
+    return;
+  }
+
+  if (text.includes("about")) {
+    navigate("about.html", "Opening about page.");
+    return;
+  }
+
+  if (text.includes("contact")) {
+    navigate("contact.html", "Opening contact page.");
+    return;
+  }
+
+  /* External links */
+  if (text.includes("github")) {
+    openExternal(
+      "https://github.com/Huda3-Asante",
+      "Opening GitHub profile."
+    );
+    return;
+  }
+
+  if (text.includes("linkedin")) {
+    openExternal(
+      "https://www.linkedin.com/in/hudaasante",
+      "Opening LinkedIn profile."
+    );
+    return;
+  }
+
+  if (text.includes("email")) {
+    openExternal(
+      "mailto:huda@example.com",
+      "Opening email."
+    );
+    return;
+  }
+
+  /* Project-specific commands */
+  if (text.includes("kleankonnect")) {
+    openExternal(
+      "https://kleankonnect-api.onrender.com/docs",
+      "Opening KleanKonnect project."
+    );
+    return;
+  }
+
+  if (text.includes("book search")) {
+    openExternal(
+      "https://github.com/Huda3-Asante/Book_Search.git",
+      "Opening Book Search API project."
+    );
+    return;
+  }
+
+  /* Fallback */
+  const msg =
+    "Sorry, I didn’t understand. You can say open GitHub, go to projects, or open LinkedIn.";
+  addBotMessage(msg);
+  speak(msg);
+}
+
 
   function addUserMessage(text) {
     const msg = document.createElement("div");
@@ -122,10 +184,26 @@ document.addEventListener("DOMContentLoaded", () => {
       addBotMessage(response);
     }, 600);
   }
+  function navigate(page, message) {
+  addBotMessage(message);
+  setTimeout(() => {
+    window.location.href = page;
+  }, 1200);
+}
 
-  /* Auto open on landing page */
+function openExternal(url, message) {
+  addBotMessage(message);
+  setTimeout(() => {
+    window.open(url, "_blank");
+  }, 1200);
+}
+
+/* Auto open ONLY on landing page */
+if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
   setTimeout(() => {
     chatbox.classList.add("active");
-    speak("Hi, welcome to Huda’s portfolio. You can talk to me or click an option below.");
+    speak("Hi, welcome to Huda’s portfolio. You can ask me to open projects, GitHub, or LinkedIn.");
   }, 3000);
+}
+
 });

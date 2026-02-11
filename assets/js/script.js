@@ -210,6 +210,64 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         typeEffect();
     }
+    // ============================================
+// FUN FACTS COUNTERS (about page)
+// ============================================
+const counters = document.querySelectorAll('.counter[data-target]');
+if (counters.length) {
+    const prefersReducedMotion =
+        window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const animateCounter = (el) => {
+        if (el.dataset.animated === 'true') return;
+        el.dataset.animated = 'true';
+
+        const target = parseInt(el.dataset.target, 10) || 0;
+        const suffix = el.dataset.suffix || '';
+        const duration = parseInt(el.dataset.duration || '1200', 10);
+
+        // If user prefers reduced motion OR target is too small
+        if (prefersReducedMotion || target <= 1) {
+            el.textContent = `${target}${suffix}`;
+            return;
+        }
+
+        const start = 1;
+        const startTime = performance.now();
+        const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+        const tick = (now) => {
+            const progress = Math.min(1, (now - startTime) / duration);
+            const eased = easeOutCubic(progress);
+            const value = Math.floor(start + (target - start) * eased);
+
+            el.textContent = `${value}${suffix}`;
+
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            } else {
+                el.textContent = `${target}${suffix}`;
+            }
+        };
+
+        requestAnimationFrame(tick);
+    };
+
+    // Only start animation when counters enter the screen
+    const counterObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.35 }
+    );
+
+    counters.forEach((c) => counterObserver.observe(c));
+}
 
     // Scroll Animations (keep as is - for all pages)
     const elements = document.querySelectorAll(".section, .service-card, .photo-frame");

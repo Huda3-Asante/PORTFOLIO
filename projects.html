@@ -6,6 +6,7 @@
     <title>Huda Ohememwaa Asante | Projects</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/ai.css">
     <link rel="stylesheet" href="assets/css/projects.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,13 +17,13 @@
             <div class="nav-brand">
                 <a href="index.html">Huda Ohememwaa Asante</a>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+             
+            <ul class="nav-menu" id="nav-links">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="about.html">About</a></li>
+                <li class="nav-item"><a href="services.html">Services</a></li>
                 <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="coming_soon.html" class="nav-link">Coming Soon</a></li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -32,7 +33,7 @@
         </nav>
     </header>
 
-    <section class="section">
+    <section class="section page-top">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">My Projects</h2>
             <div class="projects-grid">
@@ -45,7 +46,7 @@
             <div class="project-tags">
                 <span>Figma</span>
             </div>
-            <a href="https://www.figma.com/design/bElJIPgsqf0NqIdjsYGgai/EduBridge-Ghana?node-id=0-1&t=98gRsn6jxT7K9mEs-1" class="project-link">
+            <a href="https://www.figma.com/design/dhvJja7qzyYzGbpIjLlBtr/EduLink?node-id=0-1&t=H5UYpR3024UYWeIs-1" class="project-link">
                 View Project <i class="fas fa-arrow-right"></i>
             </a>
         </div>
@@ -131,6 +132,22 @@
             </a>
         </div>
     </article>
+    
+    <article class="project-card" data-aos="fade-up" data-category="app">
+        <img src="assets/images/Mashke.png" alt="Mashke Finesse Website" class="project-image">
+        <div class="project-content">
+            <h3>Mashke Finesse Website</h3>
+            <p>A website for a food business</p>
+            <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+            <a href="./Mashke_Finesse_Ltd - Copy/" class="project-link">
+                View Project <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </article>
 
 </div>
         </div>
@@ -146,11 +163,19 @@
                 <div>
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html">About</a></li>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-coming-soon">
+                    <h4>Coming Soon</h4>
+                    <ul>
+                     <li>Blog</li>
+                     <li>Mobile App</li>
+                     <li>Fashion website</li>
                     </ul>
                 </div>
                 <div>
@@ -178,6 +203,7 @@
     </footer>
 
     <script src="assets/js/projects.js"></script>
+    <script src="assets/js/ai.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -185,5 +211,32 @@
             once: true
         });
     </script>
+    <div class="ai-chatbot">
+  <button class="ai-toggle" aria-label="Open AI assistant">🤖</button>
+
+  <div class="ai-chatbox">
+    <div class="ai-header">
+  <span>Huda’s AI Assistant</span>
+  <div>
+    <button class="ai-voice" title="Talk to assistant">🎤</button>
+    <button class="ai-close">&times;</button>
+  </div>
+</div>
+
+    <div class="ai-messages" id="aiMessages">
+      <div class="ai-message bot">
+        Hi 👋 Welcome to Huda’s portfolio.  
+        I can help you explore projects, skills, or contact details.
+      </div>
+    </div>
+
+    <div class="ai-options">
+      <button data-action="projects">View Projects</button>
+      <button data-action="skills">Skills & Tech</button>
+      <button data-action="contact">Contact Huda</button>
+      <button data-action="about">About Huda</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>

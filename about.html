@@ -6,6 +6,7 @@
     <title>About | Huda Ohememwaa Asante</title>
     <link href="https://fonts.googleapis.com/css2?  family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/ai.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,7 +22,6 @@
                 <li class="nav-item"><a href="services.html">Services</a></li>
                 <li class="nav-item"><a href="projects.html">Projects</a></li>
                 <li class="nav-item"><a href="contact.html">Contact</a></li>
-                <li class="nav-item"><a href="coming_soon.html">Coming Soon</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="photo-frame floating">
-                    <img src="assets/images/photo.jpeg" alt="profile_photo" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                    <img src="assets/images/photo.jpeg" alt="Profile of Huda Ohememwaa Asante" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
                 </div>
         </div>
     </section>
@@ -88,7 +88,7 @@
       <span>Git</span>
     </li>
     <li>
-      <img src="assets/icons/github-original-wordmark.svg" style="width: 80px; height: 80px;"></i>
+      <img src="assets/icons/github-original-wordmark.svg" alt="GitHub" style="width: 80px; height: 80px;"></i>
       <span>GitHub</span>
     </li>
     <li>
@@ -100,7 +100,7 @@
       <span>Canva</span>
     </li>
     <li>
-       <img src="assets/icons/photoshop-original.svg "alt="Photoshop">
+       <img src="assets/icons/photoshop-original.svg "alt="Adobe">
       <span>Photoshop</span>
     </li>
   </ul>
@@ -188,28 +188,28 @@
     </section>
 
     <section class="section bg-dark">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Fun Facts</h2>
-            <div class="grid grid-4">
-                <div class="text-center">
-                    <span class="counter" data-target="50">17</span>
-                    <p>Projects Completed</p>
-                </div>
-                <div class="text-center">
-                    <span class="counter" data-target="25">50+</span>
-                    <p>Happy Clients</p>
-                </div>
-                <div class="text-center">
-                    <span class="counter" data-target="3">2</span>
-                    <p>Years Experience</p>
-                </div>
-                <div class="text-center">
-                    <span class="counter" data-target="15">1</span>
-                    <p>Awards Received</p>
-                </div>
+    <div class="container">
+        <h2 class="section-title" style="color: white;">Fun Facts</h2>
+        <div class="grid grid-4">
+            <div class="text-center">
+                <span class="counter" data-target="17">1</span>
+                <p>Projects Completed</p>
+            </div>
+            <div class="text-center">
+                <span class="counter" data-target="50" data-suffix="+">1</span>
+                <p>Happy Clients</p>
+            </div>
+            <div class="text-center">
+                <span class="counter" data-target="2">1</span>
+                <p>Years Experience</p>
+            </div>
+            <div class="text-center">
+                <span class="counter" data-target="1">1</span>
+                <p>Awards Received</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <footer class="footer">
         <div class="container">
@@ -226,6 +226,14 @@
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="about.html" class="nav-link active">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-coming-soon">
+                    <h4>Coming Soon</h4>
+                    <ul>
+                     <li>Blog</li>
+                     <li>Mobile App</li>
+                     <li>Fashion website</li>
                     </ul>
                 </div>
                 <div>
@@ -260,5 +268,33 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/ai.js"></script>
+    <div class="ai-chatbot">
+  <button class="ai-toggle" aria-label="Open AI assistant">🤖</button>
+
+  <div class="ai-chatbox">
+    <div class="ai-header">
+  <span>Huda’s AI Assistant</span>
+  <div>
+    <button class="ai-voice" title="Talk to assistant">🎤</button>
+    <button class="ai-close">&times;</button>
+  </div>
+</div>
+
+    <div class="ai-messages" id="aiMessages">
+      <div class="ai-message bot">
+        Hi 👋 Welcome to Huda’s portfolio.  
+        I can help you explore projects, skills, or contact details.
+      </div>
+    </div>
+
+    <div class="ai-options">
+      <button data-action="projects">View Projects</button>
+      <button data-action="skills">Skills & Tech</button>
+      <button data-action="contact">Contact Huda</button>
+      <button data-action="about">About Huda</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>  
