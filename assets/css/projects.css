@@ -1,7 +1,15 @@
-
-.section {
-    padding: 80px 20px;
+.section.page-top{
+  padding-top: 9rem;
 }
+
+@media (max-width: 768px){
+  .section.page-top{ padding-top: 11rem; }
+}
+
+@media (max-width: 480px){
+  .section.page-top{ padding-top: 12rem; }
+}
+
 
 .section-title {
     font-size: 2.4rem;
