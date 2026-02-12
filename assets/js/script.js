@@ -163,21 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // ============================================
-    // 6. KEEP ALL OTHER PAGE FUNCTIONALITY (unchanged)
-    // ============================================
-    
-    // Mobile Navbar Toggle (keep as is)
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-
-    if (hamburger) {
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-            hamburger.classList.toggle("active");
-        });
-    }
 
     // FAQ Toggle (keep as is - for FAQ page)
     const faqItems = document.querySelectorAll(".faq-item");
@@ -345,29 +330,41 @@ if (counters.length) {
 
     // Fix for iOS hover states
     document.addEventListener('touchstart', function() {}, true);
+    // ✅ Mobile Navbar Toggle (single source of truth)
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector("#nav-links"); // use ID, not .nav-menu
 
-    // Mobile menu toggle (additional handler)
-    const mobileHamburger = document.querySelector('.hamburger');
-    const mobileNavMenu = document.querySelector('.nav-menu');
-    
-    if (mobileHamburger) {
-        mobileHamburger.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            mobileNavMenu.classList.toggle('active');
-            document.body.style.overflow = mobileNavMenu.classList.contains('active') ? 'hidden' : 'auto';
-        });
-    }
+if (hamburger && navMenu) {
+  const closeMenu = () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    document.body.style.overflow = "auto";
+  };
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (mobileNavMenu && mobileNavMenu.classList.contains('active') && 
-            !e.target.closest('.nav-menu') && 
-            !e.target.closest('.hamburger')) {
-            mobileNavMenu.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    });
+  hamburger.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isOpen = navMenu.classList.toggle("active");
+    hamburger.classList.toggle("active", isOpen);
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  });
+
+  // Close when clicking a link
+  navMenu.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", closeMenu);
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!navMenu.classList.contains("active")) return;
+    if (e.target.closest("#nav-links") || e.target.closest(".hamburger")) return;
+    closeMenu();
+  });
+
+  // Close on Escape (nice UX)
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+}
 });
 
 // ============================================
@@ -403,4 +400,15 @@ window.addEventListener('load', function() {
             }
         }, 500);
     }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector(".navbar");
+  if (!nav) return;
+
+  const setNavHeight = () => {
+    document.documentElement.style.setProperty("--nav-h", `${nav.offsetHeight}px`);
+  };
+
+  setNavHeight();
+  window.addEventListener("resize", setNavHeight);
 });
