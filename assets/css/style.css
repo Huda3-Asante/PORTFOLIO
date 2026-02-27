@@ -1168,9 +1168,7 @@ body {
   opacity: 0.7;
   margin-bottom: 0.4rem;
 }
-/* =========================
-   CONTACT PAGE: FIX EDGE ISSUE
-========================= */
+/*CONTACT PAGE */
 .contact-page .contact-wrap{
   max-width: 1100px;
   margin: 0 auto;
@@ -1244,7 +1242,7 @@ body {
   color: #fff;
 }
 :root{
-  --nav-h: 90px; /* fallback */
+  --nav-h: 90px; 
 }
 
 body{
@@ -1255,15 +1253,13 @@ body{
     padding-top: var(--nav-h);
   }
 }
-/* =========================
-   MOBILE NAV MENU (FIX)
-========================= */
+/*MOBILE NAV MENU */
 .navbar{
-  position: fixed; /* if you already use fixed, keep it */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999; /* ensures it's above page content */
+  z-index: 9999; 
 }
 
 /* Desktop default */
@@ -1278,8 +1274,6 @@ body{
     top: var(--nav-h);
     left: 0;
     right: 0;
-
-    display: none;           /* hidden by default */
     flex-direction: column;
     gap: 1rem;
 
@@ -1303,4 +1297,55 @@ body{
     display: block;
     cursor: pointer;
   }
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.active {
+        display: flex;
+    }
 }
