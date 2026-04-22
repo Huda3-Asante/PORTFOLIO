@@ -1,6 +1,4 @@
-// ============================================
-// MOBILE DETECTION (keep as is)
-// ============================================
+
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
@@ -28,31 +26,22 @@ if (isMobileDevice()) {
     }
 }
 
-// ============================================
-// PROJECTS PAGE SPECIFIC CODE (MODIFIED)
-// ============================================
 document.addEventListener('DOMContentLoaded', function() {
     // Remove 300ms tap delay on mobile (keep)
     if ('ontouchstart' in window) {
         document.documentElement.style.touchAction = 'manipulation';
     }
     
-    // ============================================
-    // 1. CHECK IF WE'RE ON PROJECTS PAGE
-    // ============================================
     const projectsGrid = document.querySelector('.projects-grid');
     const isProjectsPage = projectsGrid !== null;
-    
-    // ============================================
-    // 2. PROJECTS PAGE SPECIFIC MOBILE FIXES
-    // ============================================
+
     if (isProjectsPage) {
         console.log('Projects page detected, applying mobile fixes...');
         
         const projectCards = document.querySelectorAll('.project-card');
         const projectsSection = document.querySelector('.section.projects-section') || document.querySelector('.section');
         
-        // CRITICAL: Force visibility on mobile for projects page
+    
         if (isMobileDevice() || window.innerWidth <= 768) {
             console.log('Mobile device detected, forcing project display...');
             
@@ -74,9 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // ============================================
-        // 3. PROJECT FILTERING - MOBILE FIXED VERSION
-        // ============================================
         const filterBtns = document.querySelectorAll('.filter-btn');
         
         if (filterBtns.length > 0 && projectCards.length > 0) {
@@ -117,9 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // ============================================
-        // 4. EMERGENCY MOBILE FALLBACK
-        // ============================================
         // If projects still not visible after 1 second, force them
         setTimeout(() => {
             if (isMobileDevice() || window.innerWidth <= 768) {
@@ -145,9 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 1000);
         
-        // ============================================
-        // 5. MOBILE RESIZE HANDLER (for projects page only)
-        // ============================================
         window.addEventListener('resize', function() {
             if (isMobileDevice() || window.innerWidth <= 768) {
                 // Reapply mobile fixes on resize
@@ -180,28 +160,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Typing Animation (keep as is - for home page)
-    const typingEl = document.querySelector(".typing-text");
-    if (typingEl) {
-        const text = "creative developer passionate about building beautiful, functional, and user-centered digital solutions that make an impact.";
-        let i = 0;
-
-        function typeEffect() {
-            if (i < text.length) {
-                typingEl.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeEffect, 50);
-            }
-        }
-        typeEffect();
-    }
-    // ============================================
-// FUN FACTS COUNTERS (about page)
-// ============================================
 const counters = document.querySelectorAll('.counter[data-target]');
 if (counters.length) {
     const prefersReducedMotion =
-        window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        globalThis.matchMedia && globalThis.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const animateCounter = (el) => {
         if (el.dataset.animated === 'true') return;
@@ -315,9 +277,6 @@ if (counters.length) {
         });
     }
 
-    // ============================================
-    // 7. ADDITIONAL MOBILE TOUCH FIXES (keep as is)
-    // ============================================
     // Prevent zoom on double-tap
     let lastTouchEnd = 0;
     document.addEventListener('touchend', function(event) {
@@ -367,9 +326,6 @@ if (hamburger && navMenu) {
 }
 });
 
-// ============================================
-// 8. FINAL FALLBACK FOR PROJECTS PAGE
-// ============================================
 // Run after window loads completely
 window.addEventListener('load', function() {
     const projectsGrid = document.querySelector('.projects-grid');

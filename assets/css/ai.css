@@ -1,11 +1,13 @@
-/*AI PORTFOLIO ASSISTANT*/
+/* AI PORTFOLIO ASSISTANT */
 .ai-chatbot {
   position: fixed;
-  bottom: 20px;
+  bottom: 90px;
   right: 20px;
   z-index: 9999;
   font-family: "Inter", sans-serif;
+  animation: floatIn 0.6s ease;
 }
+
 .ai-toggle {
   width: 56px;
   height: 56px;
@@ -15,7 +17,7 @@
   color: #fff;
   font-size: 22px;
   cursor: pointer;
-  box-shadow: 0 12px 30px rgba(108, 99, 255, 0.45);
+  box-shadow: 0 10px 25px rgba(108, 99, 255, 0.35);
   transition: transform 0.2s ease;
 }
 
@@ -105,6 +107,7 @@
 .ai-options button:hover {
   background: #e2e1ff;
 }
+
 .ai-voice {
   background: none;
   border: none;
@@ -118,24 +121,61 @@
 .ai-voice:hover {
   transform: scale(1.15);
 }
-.ai-input{
-  display:flex;
-  gap:10px;
-  padding:10px;
-  border-top:1px solid rgba(255,255,255,0.08);
+
+.ai-input {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
 }
-.ai-input input{
-  flex:1;
-  padding:10px 12px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.15);
-  background:rgba(255,255,255,0.06);
-  color:#fff;
-  outline:none;
+
+.ai-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  color: #2a2a3c;
+  outline: none;
 }
-.ai-input button{
-  padding:10px 14px;
-  border-radius:12px;
-  border:none;
-  cursor:pointer;
+
+.ai-input input::placeholder {
+  color: #9492a0;
+}
+
+.ai-input button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: #6c63ff;
+  color: #fff;
+}
+
+.ai-input button:hover {
+  background: #554fd8;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-chatbot {
+    bottom: 84px;
+    right: 16px;
+  }
+
+  .ai-chatbox {
+    width: min(92vw, 320px);
+    right: 0;
+  }
 }

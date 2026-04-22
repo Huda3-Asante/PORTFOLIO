@@ -6,19 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const optionButtons = document.querySelectorAll(".ai-options button");
   const voiceBtn = document.querySelector(".ai-voice");
 
-  // Optional typed input (only works if you add the form)
   const aiForm = document.getElementById("aiForm");
   const aiText = document.getElementById("aiText");
 
   if (!toggleBtn || !chatbox || !messages) return;
 
-  // ===== Settings =====
-  const CONTACT_EMAIL = "asantehuda@gmail.com"; 
-  const WHATSAPP_LINK = "https://wa.me/233559815445"; 
-  const RESUME_FILE = "./Resume - Copy.pdf"; 
+  const CONTACT_EMAIL = "asantehuda@gmail.com";
+  const WHATSAPP_LINK = "https://wa.me/233559815445";
+  const RESUME_FILE = "./Resume - Copy.pdf";
+  const GITHUB_LINK = "https://github.com/Huda3-Asante";
+  const LINKEDIN_LINK = "https://www.linkedin.com/in/hudaasante";
+  const KLEANKONNET_LINK = "https://kleankonnect-api.onrender.com/docs";
+  const BOOKSEARCH_LINK = "https://github.com/Huda3-Asante/Book_Search.git";
 
-  // ===== Helpers =====
-  const scrollToBottom = () => (messages.scrollTop = messages.scrollHeight);
+  const scrollToBottom = () => {
+    messages.scrollTop = messages.scrollHeight;
+  };
 
   function addUserMessage(text) {
     const msg = document.createElement("div");
@@ -34,99 +37,154 @@ document.addEventListener("DOMContentLoaded", () => {
     msg.innerText = text;
     messages.appendChild(msg);
     scrollToBottom();
-    if (speakIt) speak(text);
+
+    if (speakIt) {
+      speak(text);
+    }
   }
 
-  // ===== Text-to-speech (cleaner) =====
   function speak(text) {
-    if (!("speechSynthesis" in window)) return;
+    if (!("speechSynthesis" in globalThis)) return;
 
-    // Don’t speak very short system-ish messages
     const trimmed = (text || "").trim();
     if (!trimmed) return;
 
-    // Cancel any previous queued speech so it doesn’t pile up
-    window.speechSynthesis.cancel();
+    globalThis.speechSynthesis.cancel();
 
     const utterance = new SpeechSynthesisUtterance(trimmed);
     utterance.rate = 1;
     utterance.pitch = 1;
-    utterance.lang = "en-GB"; // sounds more natural for Ghana than en-US (you can change)
+    utterance.lang = "en-GB";
 
-    window.speechSynthesis.speak(utterance);
+   globalThis.speechSynthesis.speak(utterance);
   }
 
-  // ===== Navigation helpers =====
-  function navigate(page, message) {
-    addBotMessage(message);
-    setTimeout(() => (window.location.href = page), 600);
+  function navigate(page, message = "") {
+    if (message) {
+      addBotMessage(message);
+      setTimeout(() => {
+        globalThis.location.href = page;
+      }, 600);
+    } else {
+      globalThis.location.href = page;
+    }
   }
 
-  function openExternal(url, message) {
-    addBotMessage(message);
-    setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), 900);
+  function openExternal(url, message = "") {
+    if (message) {
+      addBotMessage(message);
+    }
+
+    setTimeout(() => {
+      window.open(url, "_blank", "noopener,noreferrer");
+    }, 700);
   }
 
-  // ===== Smarter command matching =====
+  function openEmail(email, message = "") {
+    if (message) {
+      addBotMessage(message);
+    }
+
+    setTimeout(() => {
+      globalThis.location.href = `mailto:${email}`;
+    }, 500);
+  }
+
   const COMMANDS = [
     {
       name: "projects",
       match: ["project", "projects", "portfolio work", "my work", "work"],
-      run: () => navigate("projects.html", "Opening the Projects page…"),
+      run: () => navigate("projects.html", "Sure — here are Huda’s projects "),
     },
     {
       name: "about",
       match: ["about", "who are you", "who is huda", "bio", "background"],
-      run: () => navigate("about.html", "Opening the About page…"),
+      run: () => navigate("about.html", "Here’s a bit more about Huda "),
     },
     {
       name: "contact",
-      match: ["contact", "reach", "message", "hire", "talk", "call"],
-      run: () => navigate("contact.html", "Opening the Contact page…"),
+      match: ["contact", "reach", "message", "talk", "call"],
+      run: () => navigate("contact.html", "Here’s how to contact Huda "),
     },
     {
       name: "services",
       match: ["service", "services", "what do you do", "offer", "pricing"],
-      run: () => navigate("services.html", "Opening the Services page…"),
+      run: () => navigate("services.html", "Here are Huda’s services"),
     },
     {
       name: "github",
       match: ["github", "code", "repo", "repositories"],
-      run: () =>
-        openExternal("https://github.com/Huda3-Asante", "Opening GitHub…"),
+      run: () => openExternal(GITHUB_LINK, "Opening Huda’s GitHub…"),
     },
     {
       name: "linkedin",
-      match: ["linkedin", "cv", "profile", "professional"],
-      run: () =>
-        openExternal("https://www.linkedin.com/in/hudaasante", "Opening LinkedIn…"),
+      match: ["linkedin", "profile", "professional"],
+      run: () => openExternal(LINKEDIN_LINK, "Opening Huda’s LinkedIn…"),
     },
     {
       name: "email",
       match: ["email", "mail", "message you", "send mail"],
-      run: () => openExternal(`mailto:${CONTACT_EMAIL}`, "Opening email…"),
+      run: () => openEmail(CONTACT_EMAIL, "Opening email…"),
     },
     {
       name: "resume",
-      match: ["resume", "cv", "download resume", "download cv"],
-      run: () => openExternal(RESUME_FILE, "Opening your resume…"),
+      match: ["resume", "download resume", "download cv", "cv"],
+      run: () => openExternal(RESUME_FILE, "Opening Huda’s resume…"),
     },
     {
       name: "whatsapp",
-      match: ["whatsapp", "wa", "chat on whatsapp"],
+      match: ["whatsapp", "chat on whatsapp"],
       run: () => openExternal(WHATSAPP_LINK, "Opening WhatsApp…"),
+    },
+    {
+      name: "tech",
+      match: ["tech stack", "technologies", "skills", "stack"],
+      run: () =>
+        addBotMessage(
+          "Huda is a Full Stack Developer working with:\n\nFrontend: HTML, CSS, JavaScript\nBackend: Python and FastAPI\nDatabases: MongoDB and MySQL\nTools: Git, GitHub, Figma, Canva, and Photoshop."
+        ),
+    },
+    {
+      name: "hazardwatch",
+      match: ["hazardwatch", "hazard project"],
+      run: () =>
+        addBotMessage(
+          "HazardWatch is a full-stack safety reporting platform where users can report hazards with location data, images, and descriptions. It also supports authentication, upvoting, and admin moderation."
+        ),
     },
     {
       name: "klean",
       match: ["kleankonnect", "klean konnect", "klean connect"],
       run: () =>
-        openExternal("https://kleankonnect-api.onrender.com/docs", "Opening KleanKonnect…"),
+        openExternal(
+          KLEANKONNET_LINK,
+          "Opening the KleanKonnet project…"
+        ),
     },
     {
       name: "booksearch",
       match: ["book search", "book api", "book project"],
       run: () =>
-        openExternal("https://github.com/Huda3-Asante/Book_Search.git", "Opening Book Search…"),
+        openExternal(
+          BOOKSEARCH_LINK,
+          "Opening the Book Search project…"
+        ),
+    },
+    {
+      name: "experience",
+      match: ["experience", "work experience", "job"],
+      run: () =>
+        addBotMessage(
+          "Huda works as a Computing Facilitator and also builds full-stack applications, APIs, and UI designs. She combines teaching, creativity, and software development."
+        ),
+    },
+    {
+      name: "hire",
+      match: ["hire", "work with you", "freelance", "job opportunity", "full time"],
+      run: () =>
+        addBotMessage(
+          "You can reach Huda via email at asantehuda@gmail.com or through WhatsApp using the green button. She is open to freelance, contract, and full-time opportunities."
+        ),
     },
   ];
 
@@ -138,22 +196,31 @@ document.addEventListener("DOMContentLoaded", () => {
       .trim();
   }
 
-  // Simple fuzzy: checks if any keyword appears
   function findCommand(text) {
     const t = normalize(text);
     if (!t) return null;
 
-    // Wake word (optional)
-    if (t.includes("hey huda") || t === "huda") {
-      return { run: () => addBotMessage("Hi! You can say: projects, services, GitHub, LinkedIn, or contact.") };
+    if (
+      t.includes("hey huda") ||
+      t === "huda" ||
+      t.includes("who are you")
+    ) {
+      return {
+        run: () =>
+          addBotMessage(
+            "I’m Huda’s portfolio assistant. I can help you explore her projects, tech stack, experience, resume, and contact details."
+          ),
+      };
     }
 
-    // Match commands
     for (const cmd of COMMANDS) {
       for (const phrase of cmd.match) {
-        if (t.includes(normalize(phrase))) return cmd;
+        if (t.includes(normalize(phrase))) {
+          return cmd;
+        }
       }
     }
+
     return null;
   }
 
@@ -166,67 +233,64 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Friendly fallback with suggestions
     addBotMessage(
-      "I didn’t catch that. Try: “show projects”, “open services”, “open GitHub”, “open LinkedIn”, or “contact”.",
-      { speakIt: true }
+      "I’m not sure I understood that.\n\nTry asking about:\n• Projects\n• Tech stack\n• Experience\n• Resume\n• Contact"
     );
   }
 
-  // ===== Button actions =====
   optionButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const action = btn.dataset.action;
       addUserMessage(btn.innerText);
 
       setTimeout(() => {
-        let response = "";
         switch (action) {
           case "projects":
-            response = "Here are Huda’s projects. I can also open the Projects page for you.";
-            addBotMessage(response);
-            navigate("projects.html", "Opening Projects…");
+            navigate("projects.html", "Sure — here are Huda’s projects");
             break;
 
           case "skills":
-            response = "Tech: HTML, CSS, JavaScript, Python, FastAPI, MongoDB, MySQL, Git/GitHub, Figma, Canva, Photoshop.";
-            addBotMessage(response);
+            addBotMessage(
+              "Huda works with HTML, CSS, JavaScript, Python, FastAPI, MongoDB, MySQL, Git, GitHub, Figma, Canva, and Photoshop."
+            );
             break;
 
           case "contact":
-            response = "You can contact Huda via the Contact page, LinkedIn, or email.";
-            addBotMessage(response);
-            navigate("contact.html", "Opening Contact…");
+            navigate("contact.html", "Here’s how to contact Huda");
             break;
 
           case "about":
-            response = "Huda is a creative developer focused on clean design and scalable backend solutions.";
-            addBotMessage(response);
-            navigate("about.html", "Opening About…");
+            navigate("about.html", "Here’s a bit more about Huda");
             break;
 
           default:
             addBotMessage("How can I help?");
         }
-      }, 350);
+      }, 300);
     });
   });
 
-  // ===== Toggle open/close =====
-  toggleBtn.addEventListener("click", () => chatbox.classList.toggle("active"));
-  closeBtn?.addEventListener("click", () => chatbox.classList.remove("active"));
+  toggleBtn.addEventListener("click", () => {
+    chatbox.classList.toggle("active");
+  });
 
-  // ===== Typed input =====
+  closeBtn?.addEventListener("click", () => {
+    chatbox.classList.remove("active");
+  });
+
   aiForm?.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const text = aiText?.value?.trim();
     if (!text) return;
+
     aiText.value = "";
     handleUserText(text);
   });
 
-  // ===== Voice recognition =====
-  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const SpeechRecognition =
+    globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
+
   let recognition = null;
 
   if (SpeechRecognition) {
@@ -241,26 +305,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     recognition.addEventListener("error", () => {
-      addBotMessage("Voice didn’t work. You can type instead 🙂", { speakIt: false });
+      addBotMessage("Voice didn’t work. You can type instead", {
+        speakIt: false,
+      });
     });
   }
 
   voiceBtn?.addEventListener("click", () => {
     if (!recognition) {
-      alert("Voice recognition not supported in this browser.");
+      addBotMessage("Voice recognition is not supported in this browser.", {
+        speakIt: false,
+      });
       return;
     }
-    // Don’t speak “Listening…” — it gets annoying
-    addBotMessage("🎤 Listening…", { speakIt: false });
+
+    addBotMessage(" Listening…", { speakIt: false });
     recognition.start();
   });
 
-  // ===== Auto open on landing page only =====
-  const path = window.location.pathname.toLowerCase();
-  if (path.endsWith("/") || path.includes("index.html")) {
+  const path = globalThis.location.pathname.toLowerCase();
+  const isHomePage = path.endsWith("/") || path.includes("index.html");
+
+  if (isHomePage) {
     setTimeout(() => {
       chatbox.classList.add("active");
-      addBotMessage("Hi 👋 Ask me to open projects, services, GitHub, LinkedIn, or contact.", { speakIt: true });
+      addBotMessage(
+        "Hi, I’m Huda’s AI assistant.\n\nI can help you explore her projects, tech stack, and experience.\n\nTry asking:\n• What projects has she built?\n• What technologies does she use?\n• View her resume\n• How can I contact her?"
+      );
     }, 2500);
   }
 });
