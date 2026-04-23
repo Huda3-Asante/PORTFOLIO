@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             hamburger.classList.toggle("active");
         });
 
-        // Close menu when link is clicked (mobile)
+        // Close menu when link is clicked 
         document.querySelectorAll(".nav-link").forEach(link => {
             link.addEventListener("click", () => {
                 navMenu.classList.remove("active");

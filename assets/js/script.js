@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             card.style.visibility = 'visible';
                         }, 10);
                     } else {
-                        // Hide card with animation
+                    
                         card.style.opacity = '0';
                         card.style.transform = 'translateY(20px)';
                         setTimeout(() => {
@@ -96,14 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             };
             
-            // Add both click and touch events for mobile
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', handleFilter);
                 btn.addEventListener('touchstart', handleFilter);
             });
         }
         
-        // If projects still not visible after 1 second, force them
         setTimeout(() => {
             if (isMobileDevice() || window.innerWidth <= 768) {
                 const anyCardVisible = document.querySelector('.project-card[style*="display: block"], .project-card:not([style*="display: none"])');
@@ -144,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // FAQ Toggle (keep as is - for FAQ page)
+    // FAQ Toggle
     const faqItems = document.querySelectorAll(".faq-item");
     faqItems.forEach(item => {
         const question = item.querySelector(".faq-question");
@@ -173,7 +171,6 @@ if (counters.length) {
         const suffix = el.dataset.suffix || '';
         const duration = parseInt(el.dataset.duration || '1200', 10);
 
-        // If user prefers reduced motion OR target is too small
         if (prefersReducedMotion || target <= 1) {
             el.textContent = `${target}${suffix}`;
             return;
@@ -216,7 +213,7 @@ if (counters.length) {
     counters.forEach((c) => counterObserver.observe(c));
 }
 
-    // Scroll Animations (keep as is - for all pages)
+    // Scroll Animations
     const elements = document.querySelectorAll(".section, .service-card, .photo-frame");
     const observer = new IntersectionObserver(
         (entries) => {
@@ -236,7 +233,7 @@ if (counters.length) {
         elements.forEach(el => observer.observe(el));
     }
 
-    // Coming Soon Countdown (keep as is - for coming soon page)
+    // Coming Soon Countdown 
     const daysEl = document.getElementById("days");
     const hoursEl = document.getElementById("hours");
     const minutesEl = document.getElementById("minutes");
@@ -266,7 +263,7 @@ if (counters.length) {
         updateCountdown();
     }
 
-    // View All FAQ button (keep as is - for FAQ page)
+    // View All FAQ button
     const viewAllBtn = document.getElementById("viewAllBtn");
     if (viewAllBtn) {
         viewAllBtn.addEventListener("click", () => {
@@ -289,7 +286,7 @@ if (counters.length) {
 
     // Fix for iOS hover states
     document.addEventListener('touchstart', function() {}, true);
-    // ✅ Mobile Navbar Toggle (single source of truth)
+    
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector("#nav-links"); // use ID, not .nav-menu
 
@@ -319,14 +316,13 @@ if (hamburger && navMenu) {
     closeMenu();
   });
 
-  // Close on Escape (nice UX)
+  // Close on Escape 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
 }
 });
 
-// Run after window loads completely
 window.addEventListener('load', function() {
     const projectsGrid = document.querySelector('.projects-grid');
     const projectCards = document.querySelectorAll('.project-card');
