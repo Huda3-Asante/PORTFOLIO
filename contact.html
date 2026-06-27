@@ -11,6 +11,15 @@
   <link rel="stylesheet" href="assets/css/style.css"/>
   <link rel="stylesheet" href="assets/css/ai.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+(function () {
+    emailjs.init({
+        publicKey: "9ZAtcldKMTZjrP_ix"
+    });
+})();
+</script>
 </head>
 
 <body>
@@ -91,18 +100,48 @@
 
       <!-- FORM -->
       <div>
-        <form class="card">
-          <div class="card-content">
-            <h3>Send a Message</h3>
+        <form id="contactForm" class="card">
 
-            <input type="text" placeholder="Your Name" required class="form-control"/>
-            <input type="email" placeholder="Email Address" required class="form-control"/>
-            <input type="text" placeholder="Subject" required class="form-control"/>
-            <textarea placeholder="Your Message" required class="form-control"></textarea>
+    <div class="card-content">
 
-            <button class="btn btn-primary" style="width:100%;">Send Message</button>
-          </div>
-        </form>
+        <h3>Send a Message</h3>
+
+        <input
+            type="text"
+            name="from_name"
+            placeholder="Your Name"
+            class="form-control"
+            required>
+
+        <input
+            type="email"
+            name="from_email"
+            placeholder="Email Address"
+            class="form-control"
+            required>
+
+        <input
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            class="form-control"
+            required>
+
+        <textarea
+            name="message"
+            placeholder="Your Message"
+            class="form-control"
+            required></textarea>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;">
+            Send Message
+        </button>
+
+        <p id="formStatus" style="margin-top:15px;"></p>
+
+    </div>
+
+</form>
       </div>
 
     </div>
@@ -148,8 +187,8 @@
 <a href="https://wa.me/233559815445" class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
-
 <script src="assets/js/script.js"></script>
 <script src="assets/js/ai.js"></script>
+<script src="assets/js/contact.js"></script>
 </body>
 </html>
